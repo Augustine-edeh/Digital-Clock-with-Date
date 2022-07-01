@@ -3,28 +3,28 @@ function showTime() {
   // Declaration of date parameters:
 
   // date method
-  const date = new Date(); 
+  let date = new Date(); 
 
   // hour
-  const h = date.getHours(); 
+  let h = date.getHours(); 
   // minutes
-  const m = date.getMinutes(); 
+  let m = date.getMinutes(); 
   // seconds
-  const s = date.getSeconds(); 
+  let s = date.getSeconds(); 
   // year
-  const year = date.getFullYear(); 
+  let year = date.getFullYear(); 
   // js default month
-  const mnth = date.getMonth();
+  let mnth = date.getMonth();
   // getting date 
-  const $date = date.getDate();
+  let $date = date.getDate();
 
   // list of months
-  const month_ = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; 
+  let month_ = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; 
   // processed month
-  const month = month_[mnth]; 
-  const dy = date.getDay();
-  const dy_ = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const day = dy_[dy]; // processed day
+  let month = month_[mnth]; 
+  let dy = date.getDay();
+  let dy_ = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let day = dy_[dy]; // processed day
   // console.log($date); // cross-checker
 
 
