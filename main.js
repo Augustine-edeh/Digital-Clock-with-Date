@@ -1,5 +1,5 @@
 
-function showTime() {
+const showTime = () => {
   // Declaration of date parameters:
 
   // date method
