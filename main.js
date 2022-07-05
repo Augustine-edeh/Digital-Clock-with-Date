@@ -3,69 +3,51 @@ function showTime() {
   // Declaration of date parameters:
 
   // date method
-  let date = new Date(); 
+  const date = new Date(); 
 
   // hour
   let h = date.getHours(); 
   // minutes
-  let m = date.getMinutes(); 
+  const  m = date.getMinutes(); 
   // seconds
-  let s = date.getSeconds(); 
+  const s = date.getSeconds(); 
   // year
-  let year = date.getFullYear(); 
+  const year = date.getFullYear(); 
   // js default month
-  let mnth = date.getMonth();
+  const mnth = date.getMonth();
   // getting date 
-  let $date = date.getDate();
+  const $date = date.getDate();
 
   // list of months
   let month_ = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; 
   // processed month
-  let month = month_[mnth]; 
-  let dy = date.getDay();
-  let dy_ = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  let day = dy_[dy]; // processed day
+  const month = month_[mnth]; 
+  const dy = date.getDay();
+  const dy_ = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const day = dy_[dy]; // processed day
   // console.log($date); // cross-checker
 
 
 
   // Am/pm (determined later in the code. *check further below* )
-  let session; 
-  if (h < 12) {
-    session = "Am";
-  } else {
-    session = "Pm"
-  }
+  let session = (h < 12) ? 'Am' : 'Pm' ;
+
   const clockView = document.getElementById("clock");
   const dateView = document.getElementById("date");
 
   // adding a prefixed zero to the time parameters so as to a uniform parameter unit of the time
-  if (h < 10) {
-    h = "0" + h;
-  }
+  (h < 10) ? h = "0" + h : '';
+  (m < 10) ? m = "0" + m : '';
+  (s < 10) ? s = "0" + s : '';
+  (h > 12) ? h = h - 12 : '';
+  (h == 00) ? h = 12 : '';  
 
-  if (m < 10) {
-    m = "0" + m;
-  }
 
-  if (s < 10) {
-    s = "0" + s;
-  }
 
-  if (h > 12) {
-    h = h - 12;
-  }
+  const time = `${h}:${m}:${s} ${session}`; // time display
   
-  if (h == 00) {
-    h = 12;
-  }
-
-
-
-  const time = h + ":" + m + ":" + s + " " + session; // time display
-
   // date display
-  const date_ = day + " " + month + " " + $date + ", " + year; 
+  const date_ = `${day} ${month} ${$date}, ${year}`; 
 
   //displaying the time in the clock div
   clockView.innerText = time;
