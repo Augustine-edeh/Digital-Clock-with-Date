@@ -1,62 +1,62 @@
+const showTime = () => { 
+  // Default Date parameters:
+  // date object
+  const dateObj = new Date(); 
 
-const showTime = () => {
-  // Declaration of date parameters:
-
-  // date method
-  const date = new Date(); 
-
-  // hour
-  let h = date.getHours(); 
-  // minutes
-  const  m = date.getMinutes(); 
-  // seconds
-  const s = date.getSeconds(); 
-  // year
-  const year = date.getFullYear(); 
-  // js default month
-  const mnth = date.getMonth();
+  // getting seconds
+  let defaultSeconds = dateObj.getSeconds(); 
+  // getting minutes
+  let  defaultMinute = dateObj.getMinutes(); 
+  // getting hour
+  let hour = dateObj.getHours();
+  // getting day
+  const defaultday = dateObj.getDay();
   // getting date 
-  const $date = date.getDate();
+  const defaultDate = dateObj.getDate();
+  // getting month
+  const defaultMonth = dateObj.getMonth();
+  // getting year
+  const defaultYear = dateObj.getFullYear(); 
 
-  // list of months
-  let month_ = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; 
-  // processed month
-  const month = month_[mnth]; 
-  const dy = date.getDay();
-  const dy_ = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const day = dy_[dy]; // processed day
-  // console.log($date); // cross-checker
-
-
-
-  // Am/pm (determined later in the code. *check further below* )
-  let session = (h < 12) ? 'Am' : 'Pm' ;
-
-  const clockView = document.getElementById("clock");
-  const dateView = document.getElementById("date");
-
-  // adding a prefixed zero to the time parameters so as to a uniform parameter unit of the time
-  (h < 10) ? h = "0" + h : '';
-  (m < 10) ? m = "0" + m : '';
-  (s < 10) ? s = "0" + s : '';
-  (h > 12) ? h = h - 12 : '';
-  (h == 00) ? h = 12 : '';  
-
-
-
-  const time = `${h}:${m}:${s} ${session}`; // time display
+  // weeks array
+  const daysOfTheweek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  // months array
+  let monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; 
   
-  // date display
-  const date_ = `${day} ${month} ${$date}, ${year}`; 
+  // processed Date parameters:
+  // month
+  const month = monthArray[defaultMonth]; 
+  // day
+  const day = daysOfTheweek[defaultday];
 
-  //displaying the time in the clock div
-  clockView.innerText = time;
-  dateView.innerText = date_;
 
-  // console.log(time);// logging to the console to check for error if there is
+  // Am/pm
+  let period = (hour < 12) ? 'Am' : 'Pm' ;
 
-  // stimulating the showTime function every 1 second.
+  const clockDiv = document.getElementById("clock");
+  const dateDiv = document.getElementById("date");
+
+  // adding a prefixed zero to the time parameter for uniform display digits at all times
+  (hour < 10) ? hour = "0" + hour : '';
+  (defaultMinute < 10) ? defaultMinute = "0" + defaultMinute : '';
+  (defaultSeconds < 10) ? defaultSeconds = "0" + defaultSeconds : '';
+  (hour > 12) ? hour = hour - 12 : '';
+  (hour == 00) ? hour = 12 : '';  
+
+
+  // processed timeString
+  const timeString = `${hour}:${defaultMinute}:${defaultSeconds} ${period}`; 
+  
+  // processed dateString
+  const dateString = `${day} ${month} ${defaultDate}, ${defaultYear}`; 
+
+  //displaying timeString in the clock div
+  clockDiv.innerText = timeString;
+  //displaying  dateString in the clock div
+  dateDiv.innerText = dateString;
+
+  // simulating the showTime function every 1 second.
   setInterval(showTime, 1000); 
 }
 
-setInterval(showTime, 1000);
+showTime();

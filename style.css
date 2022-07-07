@@ -1,6 +1,5 @@
   :root {
-    --c-w: black;
-    --c-b: white;
+    font-size: 16px;
   }
 
   * {
@@ -8,14 +7,10 @@
     padding: 0;
   }
 
-  html,
-  body {
+  html, body {
     background-color: #ecf0f3;
     display: grid;
     place-content: center;
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
     height: 100%;
   }
 
@@ -24,10 +19,9 @@
     top: 0px;
     left: 0px;
     background-color: black;
-    margin: 0px;
+    margin: 2px;
     padding: 4px;
     width: 47px;
-    height: auto;
   }
 
   .sect {
@@ -39,20 +33,24 @@
   }
 
   .main {
-    padding: 5px;
+    padding: 2rem;
     color: black;
-    font-family: arial;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     box-shadow: 
     3px 10px 30px rgba(0,0,0,0.3),
-    -3px -10px 30px #ffffff;
+    -3px 10px 30px #fff,
+    3px 10px 30px rgba(0,0,0,0.3),
+    -3px -10px 30px #fff;
   }
 
   #clock {
-    font-size: 3.5rem;
+    font-size: 6rem;
   }
 
   #date {
-    color: black;
-    font-size: 11px;
+    margin-top: 5px;
+    /* color: black; */
+    font-size: 1.4rem;
+    /* letter-spacing: 1px; */
   }
