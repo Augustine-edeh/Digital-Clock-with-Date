@@ -11,18 +11,42 @@
   <title>digital Clock</title>
 </head>
 <body>
-  <!-- Burger menu-->
-  <section class="container">
-    <div class="sect s1"></div>
-    <div class="sect s2"></div>
-    <div class="sect s3"></div>
-  </section>
+  <main>
+    <!-- Burger menu -->
+    <!-- <section class="container">
+      <div class="sect s1"></div>
+      <div class="sect s2"></div>
+      <div class="sect s3"></div>
+    </section> -->
 
-  <!-- Clock section-->
-  <section class="main">
-    <div id="clock"></div>
-    <div id="date"></div>
-  </section>
+    <section class="menu-bar">
+      <span>&uparrow;</span>
+      <span>&downarrow;</span>
+    </section>
+    
+    
+    <!-- Clock section-->
+    <section class="main">
+      <div class="clock-container">
+        <div id="clock"></div>
+      </div>
+      <div class="period"></div>
+
+
+      <div class="day-date">
+        <div class="day"></div>
+        <div class="date-container">
+          <div class="date"></div>
+          <div class="year"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- || THEME TOGGLER -->
+    <section class="theme-toggler">
+      <p>Light</p> <div>change</div> <p>Dark</p>
+    </section>
+  </main>
 
   <!-- custom JavaScript -->
   <script src="main.js" type="text/javascript" charset="utf-8"></script>

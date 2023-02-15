@@ -35,7 +35,10 @@ const showTime = () => {
 
   const clockDiv = document.getElementById("clock");
   const dateDiv = document.getElementById("date");
-
+  const periodOfTheDay = document.querySelector(".period");
+  const dayContainer = document.querySelector(".day");
+  const dateElement = document.querySelector(".date");
+  const yearDiv = document.querySelector(".year");
   // adding a prefixed zero to the time parameter for uniform display digits at all times
   (hour < 10) ? hour = "0" + hour : '';
   (defaultMinute < 10) ? defaultMinute = "0" + defaultMinute : '';
@@ -45,18 +48,25 @@ const showTime = () => {
 
 
   // processed timeString
-  const timeString = `${hour}:${defaultMinute}:${defaultSeconds} ${period}`; 
+  const timeString = `${hour}:${defaultMinute}:${defaultSeconds}`; 
   
   // processed dateString
-  const dateString = `${day} ${month} ${defaultDate}, ${defaultYear}`; 
+  const dateString = `${day} ${month} ${defaultDate}, ${defaultYear}`;
 
   //displaying timeString in the clock div
   clockDiv.innerText = timeString;
   //displaying  dateString in the clock div
-  dateDiv.innerText = dateString;
+  // dateDiv.innerText = dateString;
+  //  DISPLAYING PERIOD-OF-THE-DAY
+  periodOfTheDay.innerText = period;
+  // || DIS[LAYING DAY
+  dayContainer.innerText = day;
+  // || DISPLAYING DATE
+  dateElement.innerText = `${month} ${defaultDate},`;
+  // || DISPLAYING YEAR
+  yearDiv.innerText = `${defaultYear}`;
 
   // simulating the showTime function every 1 second.
   setInterval(showTime, 1000); 
 }
-
 showTime();
